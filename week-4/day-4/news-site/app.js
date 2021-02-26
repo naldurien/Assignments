@@ -1,4 +1,4 @@
-//Version 2 - somehow version 1 never got uploaded to GH and then got deleted in my local??
+//Version 2 - somehow version 1 never got uploaded to GH and then got deleted on my local??
 
 let allNewsUL = document.getElementById("allNewsUL")
 
@@ -11,6 +11,11 @@ function nullCheck (label) {
     }
 }
 
+function formatDateTime(datetime) {
+    regex = /T.*$/
+    return datetime.replace(regex, "")
+}
+
 for (let index = 0; index < news.articles.length; index++) {
     let story = news.articles[index]  
     let storyItem = `
@@ -19,7 +24,7 @@ for (let index = 0; index < news.articles.length; index++) {
                             <p>${nullCheck(story.author)}</p>
                             <p><img src="${story.urlToImage}" width="200px" height = "150px" /></p>
                             <p><i>${nullCheck(story.description)}</i></p>
-                            <p>Published: ${story.publishedAt}</p>
+                            <p>Published on: ${formatDateTime(story.publishedAt)}</p>
                         </li>
                         <br>
                         `
