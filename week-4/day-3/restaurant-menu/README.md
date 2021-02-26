@@ -1,3 +1,5 @@
+Now live on the web at: http://naldurien-restaurant-menu.surge.sh/
+
 Assignment Goal: Create a responsive/mobile-friendly website for a restaurant's menu, with the ability to display only certain types of dishes (entrees vs. desserts, etc.).
 
 Screenshot of mobile-sized version:
