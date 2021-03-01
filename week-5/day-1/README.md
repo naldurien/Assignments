@@ -5,7 +5,9 @@ Assignment Goal: Create a responsive/mobile-friendly website with a roundup of n
 Screenshots of mobile-sized version:
 
 Movie List - 
+
 ![](https://github.com/nicolealdurien/Assignments/blob/main/week-5/day-1/movie-list.png?raw=true)
 
 Movie Details - 
+
 ![](https://github.com/nicolealdurien/Assignments/blob/main/week-5/day-1/movie-details.png?raw=true)
