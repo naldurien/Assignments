@@ -1,0 +1,48 @@
+ul {
+    list-style-type: none;
+}
+
+li {
+    font-size: 1rem;
+}
+
+#moviesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    column-gap: 30px;
+    row-gap: 30px;
+}
+
+img {
+    width: 200px;
+    height:200px;
+}
+
+.page-header{
+    font-size: 3rem;
+    padding: 10px;
+    background-color: rgb(199, 3, 3);
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+
+.detailBtn {
+    color: white;
+    background-color: rgb(10, 10, 75);
+    font-weight: bold;
+}
+
+.details {
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+body {
+    /* credit to Bermix Studio on unsplash.com */
+    background-image: url('big-flag.jpg');
+    max-width: 2560px;
+    
+}
