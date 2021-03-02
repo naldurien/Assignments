@@ -98,19 +98,6 @@ btnDeleteOrder.addEventListener("click", function() {
     
 })
 
-// btnSearchOrder.addEventListener("click", function() {
-//     const email = searchByEmailTextBox.value
-//     let searchRequest = new XMLHttpRequest()
-//     let searchURL = `https://troubled-peaceful-hell.glitch.me/orders/${email}`
-    
-//     searchRequest.addEventListener('load', function() {
-//         console.log("yo")
-        
-
-//     searchRequest.open('GET', searchURL)
-//     searchRequest.send()
-//     })
-// })
 
 btnSearchOrder.addEventListener("click", function() {
     const email = searchByEmailTextBox.value
