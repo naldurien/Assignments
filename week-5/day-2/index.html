@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nicole Aldurien's Movie Data Page</title>
+  <meta name="description" content="Movie Data Page">
+  <meta name="author" content="Nicole Aldurien">
+  <link rel="stylesheet" href="coffee-style.css">
+</head>
+
+
+<body>
+  <h1 class = "page-header">Today's Coffee Orders</h1>
+  
+  <div id="actionDIV">
+      <p>View All Existing Coffee Orders:&nbsp;&nbsp;<button id="btnAllCoffees" class="button">See All Orders</button></p>
+
+      <p>Add A New Order:<br>
+      <input type="text" id="addEmailTextBox" placeholder="Customer Email" />
+      <input type="text" id="addCoffeeTypeTextBox" placeholder="Coffee Type" />
+      <input type="text" id="addSizeTextBox" placeholder="Size" />
+      <input type="text" id="addPriceTextBox" placeholder="Price" />
+      <button id="btnSubmitNewCoffee" class="button">Submit New Coffee Order</button></p>
+
+      <p>Search For An Order:<br>
+      <input type="text" id="searchByEmailTextBox" placeholder="Customer Email" /> 
+      <button id="btnSearchOrder" class="button">Search</button></p>
+      
+      <p>Delete An Order:<br>
+      <input type="text" id="deleteByEmailTextBox" placeholder="Customer Email" /> 
+      <button id="btnDeleteOrder" class="button">Delete Coffee Order</button></p>
+  </div>
+
+  <div id="successfulActionMessageContainer"></div>
+  <div id="allCoffeesContainer"></div>
+  <div id = "searchCoffeesContainer"></div>
+
+<script src="coffeeApp.js"></script>
+
+
+</body>
+</html>
