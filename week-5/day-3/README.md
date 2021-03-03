@@ -1,6 +1,6 @@
 Now live on the web at: http://nicole-aldurien-weather.surge.sh
 
-Assignment Goal: Create a responsive/mobile-friendly website for a barista to track customers' coffee orders (stored in an API). Be able to view all orders, add a new orders, search for an order, and delete an order.
+Assignment Goal: Create a responsive/mobile-friendly website to display weather data upon request (source from OpenWeather API). 
 
 Screenshot of mobile-sized version:
 
