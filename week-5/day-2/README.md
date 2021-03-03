@@ -1,4 +1,4 @@
-Now live on the web at: http://nicole-aldurien-coffeshop.surge.sh
+Now live on the web at: http://nicole-aldurien-coffeeshop.surge.sh
 
 Assignment Goal: Create a responsive/mobile-friendly website for a barista to track customers' coffee orders (stored in an API). Be able to view all orders, add a new orders, search for an order, and delete an order.
 
