@@ -1,0 +1,48 @@
+
+
+#weatherContainer {
+    column-gap: 30px;
+    row-gap: 30px;
+    padding: 20px;
+}
+
+#actionDIV {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    background-color: rgba(0,0,0,0.2);
+}
+
+.page-header{
+    font-size: 2rem;
+    padding: 15px 2px; 
+    background-color: rgb(35, 5, 104);
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    color: white;
+    width: 100%;
+}
+
+.button {
+    color: white;
+    background-color: rgb(35, 5, 104);
+    padding: 5px;
+}
+
+
+.weather {
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    opacity: 1.0;
+}
+
+body {
+    /* credit to Jason Blackeye on unsplash.com */
+    background-image: url('clouds.jpg');
+    background-color: rgb(163, 210, 254);
+    max-width: 100%;
+    margin: 0;  
+}

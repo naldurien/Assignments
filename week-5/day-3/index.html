@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nicole Aldurien's Weather Data Page</title>
+  <meta name="description" content="Weather Data Page">
+  <meta name="author" content="Nicole Aldurien">
+  <link rel="stylesheet" href="weather-style.css">
+</head>
+
+
+<body>
+  <h1 class = "page-header">Weather Forecast</h1>
+  
+  <div id="actionDIV">
+    <!-- Not currently using geolocation search -->
+    <!-- <p>Get Weather Info By Browser Location:&nbsp;&nbsp; <button id="btnGetWeather" class="button">Get Weather</button></p> -->
+    <p>Get Weather Info By City and Full State Name: &nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="text" id="cityTextBox" placeholder="City" />
+    <input type="text" id="stateTextBox" placeholder="State" />&nbsp;
+    <button id="btnSubmittedLocation" class="button">Submit Location</button></p>
+
+      
+  </div>
+
+  <div id="weatherContainer"></div>
+
+<script src="weather.js"></script>
+
+
+</body>
+</html>
