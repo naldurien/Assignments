@@ -1,6 +1,3 @@
-// Not using city/state version right now
-// const cityTextBox = document.getElementById("cityTextBox")
-// const stateTextBox = document.getElementById("stateTextBox")
 const zipTextBox = document.getElementById("zipTextBox")
 // Not currently using geolocation search that uses this button
 // const btnGetWeather = document.getElementById("btnGetWeather")
@@ -25,9 +22,12 @@ function displayWeather(result) {
     </div>
     ` 
     weatherContainer.innerHTML = weather
+    zipTextBox.value = ""
 }
 
+
 btnSubmittedLocation.addEventListener("click", function() {
+    event.preventDefault()
     const zip = zipTextBox.value
     fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${zip}&appid=e9b850f32e29330be12e3698eeed5a05`)
     .then(response => {
@@ -36,14 +36,3 @@ btnSubmittedLocation.addEventListener("click", function() {
         displayWeather(result)        
     })
   })
-
-// btnSubmittedLocation.addEventListener("click", function() {
-//     const city = cityTextBox.value
-//     const state = stateTextBox.value
-//     fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${state}&appid=e9b850f32e29330be12e3698eeed5a05`)
-//     .then(response => {
-//         return response.json()
-//     }).then(result => {
-//         displayWeather(result)        
-//     })
-//   })
