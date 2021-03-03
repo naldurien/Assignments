@@ -4,5 +4,5 @@ Assignment Goal: Create a responsive/mobile-friendly website for a barista to tr
 
 Screenshot of mobile-sized version:
 
-![](https://github.com/nicolealdurien/Assignments/blob/main/week-5/day-3/screenshot.png?raw=true)
+![](https://github.com/nicolealdurien/Assignments/blob/main/week-5/day-3/screenshot-zip.png?raw=true)
 
