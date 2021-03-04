@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nicole Aldurien's Weather Data Page</title>
+  <meta name="description" content="Weather Data Page">
+  <meta name="author" content="Nicole Aldurien">
+  <link rel="stylesheet" href="grocery-style.css">
+</head>
+
+
+<body>
+  <div id="actionDIV"><h1 class="page-header"> Grocery Store List</h1>
+
+    <h2>View All Stores:&nbsp;&nbsp;<button id="btnViewStores" class="button">View Store List</button></h2>
+    <h2>Add A Store:<br><input type="text" id="addStoreTextBox" placeholder="Store" />&nbsp;<button id ="btnAddStore" class="button">Add Store</button>
+    </h2>
+    <h2>Delete A Store:&nbsp;&nbsp;<button id ="btnViewToDelete" class="button">See Stores To Delete</button>
+    </h2></h2>
+    <br>
+    <br>
+    <ul id="itemsUL"></ul>
+    <ul id="storeUL"></ul>
+    
+  </div>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyAva4bHoEjvrOrN5M6M0oajKTWwXzQD7Vw",
+    authDomain: "grocery-database-7b131.firebaseapp.com",
+    projectId: "grocery-database-7b131",
+    storageBucket: "grocery-database-7b131.appspot.com",
+    messagingSenderId: "187928520481",
+    appId: "1:187928520481:web:f13fee6cad89fb81aa8060",
+    measurementId: "G-JYKH47GG7Q"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+    var db = firebase.firestore();
+</script>
+<script src="groceryDb.js"></script>
+
+
+</body>
+</html>
