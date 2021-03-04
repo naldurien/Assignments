@@ -6,10 +6,10 @@ Screenshots of mobile-sized version:
 
 Initial page load and viewing all stores -
 
-![](https://github.com/nicolealdurien/Assignments/blob/main/week-5/day-4/screenshot1.png?raw=true
+![](https://github.com/nicolealdurien/Assignments/blob/main/week-5/day-4/screenshot1.png?raw=true)
 
 
 Adding a store and deleting stores - 
 
-![](https://github.com/nicolealdurien/Assignments/blob/main/week-5/day-4/screenshot2.png?raw=true
+![](https://github.com/nicolealdurien/Assignments/blob/main/week-5/day-4/screenshot2.png?raw=true)
 
