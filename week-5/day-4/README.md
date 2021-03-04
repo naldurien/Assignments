@@ -1,6 +1,8 @@
-Now live on the web at: http://nicole-aldurien-groceries-firebase.surge.sh
+Now live on the web at http://nicole-aldurien-groceries-firebase.surge.sh.
 
-Assignment Goal: Create a responsive/mobile-friendly website to allow a user to make a list of stores and have it persist using Firebase.
+
+Assignment Goal: Create a responsive/mobile-friendly website to allow a user to make a list of stores. Have the list persist using Firebase. Be able to view all stores, add a store, and delete a store.
+
 
 Screenshots of mobile-sized version:
 
