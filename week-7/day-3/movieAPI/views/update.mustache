@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nicole Aldurien's Page</title>
+  <meta name="description" content="Nicole Aldurien's Assignment">
+  <meta name="author" content="Nicole Aldurien">
+</head>
+    <body>
+        <h1>Update Movie</h1>
+        <form method="POST" action="/movies/create">
+            Name: <input type='text' placeholder='Enter name' name='title' required /><br><br>
+            Description: <input type='text' placeholder='Enter description' name='description' required /><br><br>
+            <label for="genre">Genre: </label>
+            <select name="genre" id="genre">
+                <option disabled>Please select a genre:</option>
+                <option value="action">Action</option>
+                <option value="comedy">Comedy</option>
+                <option value="drama">Drama</option>
+                <option value="fantasy">Fantasy</option>
+                <option value="horror">Horror</option>
+                <option value="nonfiction">Non-fiction</option>
+                <option value="sci-fi">Science Fiction</option>
+                <option value="western">Western</option>
+            </select><br><br>
+            Poster: <input type='text' placeholder='Enter image URL' name='posterURL' required /><br><br>
+            <button>Add Movie</button>
+        </form>
+        <br>
+            <h1>Update Movie</h1>
+            <ul style="list-style: none">
+            {{#allMovies}}
+            <br>
+            <li>
+            <h2>{{title}}</h2>
+            <form method="POST" action="/movies/delete"> 
+            <input type="hidden" value="{{movieId}}" name="movieId" />
+            <button>Delete Movie</button>
+            </form>
+            <img src='{{posterURL}}' width="260px" height="426px" alt='poster for selected movie'><br><br>
+            <form method="POST" action="/movies/update"> 
+            <input type="hidden" value="{{movieId}}" name="movieId" />
+            <button>Update Movie</button>
+            </form>
+            </li>
+            {{/allMovies}}
+        </ul>
+        <br>
+
+    {{^allMovies}}
+        <h1>There are currently no movies in your database! Please add a movie.</h1>
+    {{/allMovies}}
+    </body>
+</html>

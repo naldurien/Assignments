@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nicole Aldurien's Page</title>
+  <meta name="description" content="Nicole Aldurien's Assignment">
+  <meta name="author" content="Nicole Aldurien">
+</head>
+    <body>
+    <a href="/movies">Return Home</a>
+    {{#filteredMovies}}
+    <h1>{{genre}} Movies>/h1>
+    <br>
+    <ul style="list-style: none">
+        <li>
+        <h2>{{title}}</h2>
+        <img src='{{posterURL}}' width="260px" height="426px" alt='poster for selected movie'><br><br>
+        </li>
+    </ul>
+    {{/filteredMovies}}
+
+    </body>
+    </html>
