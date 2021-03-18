@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nicole Aldurien's Page</title>
+  <meta name="description" content="Nicole Aldurien's Assignment">
+  <meta name="author" content="Nicole Aldurien">
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <h1 text-align="center">Welcome to the DigitalCrafts' Trip Planner!</h1>
+    <br><br>
+    <h2> Log In To Your Account</h2>
+    <form method="POST" action="/login">
+        <input type="text" placeholder="Enter username" name="username" required>
+        <input type="password" placeholder="Enter password" name="password" required>
+        <button>Log In</button>
+    </form>
+    <p>Need an account? <a href="/register">Sign up</a></p>
+
+    {{message}}
+
+</body>
+</html>

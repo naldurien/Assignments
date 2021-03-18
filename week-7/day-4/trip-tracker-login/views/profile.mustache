@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nicole Aldurien's Page</title>
+  <meta name="description" content="Nicole Aldurien's Assignment">
+  <meta name="author" content="Nicole Aldurien">
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <form method="GET" action="/logout">
+    <button>Log Out</button>
+    </form>
+    <br>
+    <h1>Hello {{username}}! Welcome To Your Profile Page!</h1>
+
+        <h1>Add A New Trip</h1>
+        <form method="POST" action="/trips/add-trip">
+            Destination: <input type='text' placeholder='Enter destination' name='destination' required><br><br>
+            Destination Image:
+            <input type='text' placeholder='Enter image URL' name='imageURL'><br><br>
+            Departure Date:
+            <input type='date' name='departureDate' required><br><br>
+            Return Date:
+            <input type='date' name='returnDate' required><br><br>
+            <button>Add Trip</button>
+        </form>
+
+        <br>
+        <h1>Current Trips Planned</h1>
+        <ul style="list-style: none">
+            {{#allTrips}}
+            <br>
+            <li >
+            <form method="POST" action="/trips/delete-trip">
+            <input type="hidden" value="{{tripId}}" name="tripId" />
+            <h2>Destination: {{destination}}&nbsp;&nbsp;&nbsp;<button>Delete Trip</button></h2>
+            </form>
+            <img src='{{imageURL}}' width="260px" height="126px" alt='image of chosen destination'><br>
+            <i>Departure: {{departureDate}}<br>
+            Return: {{returnDate}}<br></i>
+            <form method="GET" action="/trips/update/:{{tripId}}">
+            <input type="hidden" value="{{tripId}}" name="tripId" />
+            <input type="hidden" value="{{destination}}" name="destination" />
+            <input type="hidden" value="{{imageURL}}" name="imageURL" />
+            <input type="hidden" value="{{departureDate}}" name="departureDate" />
+            <input type="hidden" value="{{returnDate}}" name="returnDate" />
+            <button>Update Trip</button>
+            </form><br><br>
+            </li>
+            {{/allTrips}}
+        </ul>
+        <h2>Total Trips Planned: {{totalTrips}}</h2>
+    </body>
+</html>
+
+</body>
+</html>
