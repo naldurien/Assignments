@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nicole Aldurien's Page</title>
+  <meta name="description" content="Nicole Aldurien's Assignment">
+  <meta name="author" content="Nicole Aldurien">
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <h1 text-align="center">Welcome to the DigitalCrafts' Trip Planner!</h1>
+    <form action="/login">
+    <button>Log In To Your Account</button>
+    </form><br>
+    <form action="/register">
+    <button>Create A New Account</button>
+    </form><br><br>
+    <h2>Chat With Others About Travel!</h2>
+
+    <label for="usernameTextBox">Username: </label>
+    <input type="text" placeholder="Enter username" id="usernameTextBox"><br><br>
+    <label for="chatMessageTextBox">Message:&nbsp;&nbsp;</label>
+    <textarea name="Text1" cols="40" rows="5" id="chatMessageTextBox"></textarea>
+    <button id="sendButton">Send</button>
+
+    <h3>People currently connected: {{displayCounter}}</h3>
+
+    <ul id="messagesUL"></ul>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io()
+    </script>
+    <script src="/client.js"></script>
+</body>
+</html>
