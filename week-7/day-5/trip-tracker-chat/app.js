@@ -41,7 +41,9 @@ global.trips = [
 global.users = [
     {userId: "2c67229b-c2f3-463f-a85f-3929d9b0df97",
     username: "consultingdetective",
-    password: 31415926}
+    password: 314159,
+    userMovies: []
+    }
 ]
 
 app.set('views', './views')
@@ -72,13 +74,13 @@ socket.on('Houston', (chat) => {
 // attempt to get history showing
 chats.push(chat)
 console.log(chats)
-io.emit('Houston', chat)
+io.emit('Houston', chats)
 })
 })
 
 
 
 
-http.listen(5000, () => {
+http.listen(3000, () => {
     console.log('Server is running...')
 })

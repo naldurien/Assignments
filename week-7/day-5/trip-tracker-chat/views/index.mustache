@@ -21,15 +21,15 @@
     <button>Create A New Account</button>
     </form><br><br>
     <h2>Chat With Others About Travel!</h2>
-
-    <label for="usernameTextBox">Username: </label>
+    
+    <label for="usernameTextBox">Username:&nbsp;</label>
     <input type="text" placeholder="Enter username" id="usernameTextBox"><br><br>
-    <label for="chatMessageTextBox">Message:&nbsp;&nbsp;</label>
-    <textarea name="Text1" cols="40" rows="5" id="chatMessageTextBox"></textarea>
-    <button id="sendButton">Send</button>
-
+    <label for="chatMessageTextBox">Message:&nbsp;&nbsp;&nbsp;</label>
+    <textarea name="Text1" cols="40" rows="5" id="chatMessageTextBox"></textarea><br><br>
+    <button id="sendButton">Send Message</button>
+    <br><br>
     <h3>People currently connected: {{displayCounter}}</h3>
-
+    <i>(Full chat history will be shown when next message is received or sent.)</i><br><br>
     <ul id="messagesUL"></ul>
 
     <script src="/socket.io/socket.io.js"></script>

@@ -12,12 +12,17 @@ sendButton.addEventListener('click', () => {
     socket.emit('Houston', chat)
 })
 
+
+
+
 // lets client listen for server
-socket.on('Houston', (chat) => {
+socket.on('Houston', (chats) => {
     // attempt to get chat history showing
-    // for (let index = 0; index < chats.length; index++) {
-    //     let chat = chats[index]
-    let messageItem = `<li>${chat.username}: ${chat.message}</li>` 
-    messagesUL.insertAdjacentHTML('beforeend', messageItem)
+    messagesUL.innerHTML = ""
+    for (let index = 0; index < chats.length; index++) {
+        let chat = chats[index]
+        let messageItem = `<li>${chat.username}: ${chat.message}</li>` 
+        messagesUL.insertAdjacentHTML('beforeend', messageItem)
+    }
 })
 
