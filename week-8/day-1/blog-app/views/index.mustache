@@ -1,0 +1,28 @@
+<html>
+<head></head>
+
+<body>
+    <h1>Airing of Grievances</h1>
+    <h3>Speak your mind!</h3>
+    <h3>Posts:</h3>
+    <ul style="list-style: none">
+    {{#posts}}
+        <li>
+            <h3>Title: {{title}}</h3>
+            <p>Post: {{body}}<p>
+            <div id=buttons style="display: flex">
+            <form method='POST' action='/delete-post'>
+            <input type='hidden' value='{{post_id}}' name='post_id'>
+            <button>Delete Post</button></form>
+            <a href="/update-post/{{post_id}}">
+            <button>Update Post</button></a>
+            </div>
+            <br>
+        </li>
+    {{/posts}}
+    </ul>
+    <a href="/add-post">Add A Post</a>
+
+
+</body>
+</html>
