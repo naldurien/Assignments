@@ -1,6 +1,14 @@
 const express = require('express')
 const app = express() 
 const mustacheExpress = require('mustache-express')
+const session = require('express-session')
+
+app.use(session({
+    secret: 'THISISSECRETKEY',
+    saveUninitialized: true
+}))
+
+
 const moviesRouter = require('./routes/movies')
 
 const PORT = 3000
@@ -9,6 +17,13 @@ app.engine('mustache', mustacheExpress())
 app.use(express.urlencoded()) 
 app.use("/movies", moviesRouter)
 
+app.set('views', './views')
+
+app.set('view engine', 'mustache')
+
+app.listen(PORT, () => {
+    console.log('Server is running...')
+})
 
 global.movies = [
     {title: "The Princess Bride",
@@ -22,10 +37,43 @@ global.movies = [
      
 ]
 
-app.set('views', './views')
+global.users = [
+    {username: 'Sherlock Holmes', password: '31415926', age: 39}, 
+    {username: 'John Watson', password: '121057', age: 42}
+]
 
-app.set('view engine', 'mustache')
+app.get('/register', (req, res) => {
+    res.render('register')
+})
 
-app.listen(PORT, () => {
-    console.log('Server is running...')
+
+app.post('/register', (req, res) => {
+
+    const username = req.body.username 
+    const age = req.body.age
+    const password = req.body.password 
+
+    const persistedUser = users.find((user) => {
+        return user.username == username && user.password == password
+    })
+
+
+    if(persistedUser) {
+        if(req.session) {
+            req.session.username = username 
+            req.session.age = age
+        }
+ 
+        res.redirect('/confirm')
+
+    } else { 
+        res.render("register", {message: "Your username or password is incorrect!"})
+    }
+})
+
+app.get('/confirm', (req, res) => {
+
+    const username = req.session.username 
+    const age = req.session.age
+    res.render('confirm', {username: username, age: age})
 })

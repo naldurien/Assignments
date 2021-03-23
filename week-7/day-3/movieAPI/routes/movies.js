@@ -78,7 +78,7 @@ router.get('/api/movies', (req, res) => {
 // localhost:3000/movies/movie-details/:movieId
 // go to Movie Details page for a film
 
-// router.get('./:movieId', (req, res) = {
+// router.get('/:movieId', (req, res) = {
 //     const movieId = req.params.movieId
 //      const chosenMovie = movies.find((movie) => movie.movieId == movieId)
 //     console.log(movie)
@@ -95,5 +95,4 @@ router.get('/api/movies', (req, res) => {
 //     const filtered = movies.find((movie) => movie.genre == genre) 
 //     console.log(filtered)
 //     res.render("genre", {filteredMovies: filtered})
-    
 // })

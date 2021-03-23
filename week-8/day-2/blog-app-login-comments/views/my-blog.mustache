@@ -1,0 +1,45 @@
+<html>
+<head>
+<link rel="stylesheet" href="/static/styles.css"
+</head>
+
+<body>
+    <div class="buttons" style="display: flex">
+    <form method="GET" action="/logout">
+    <button>Log Out</button>&nbsp;&nbsp;
+    <a href="/"><button>Return Home</button></a>
+    </form></div>
+    <h1 class="page-title">Welcome {{username}} to your profile page!</h1>
+    <p><a href="/all-posts">See and/or comment on</a> all posts from all users.</p>
+    <h1>Add A Post</h1>
+    <form method='POST' action='/add-post'>
+  <input type='text' placeholder='Enter title' size="50" maxlength="200" name='title'><br><br>
+  <textarea placeholder='Share your thoughts!' rows="8" cols="50" name='body'></textarea><br>
+  <input type='checkbox' name='isPublished' checked>
+  <label>Uncheck to delay publishing your post.</label><br><br>
+  <button>Save Post</button>
+    </form>
+    
+<br><br>
+    <h3>Your Posts:</h3>
+    <ul style="list-style: none">
+    {{#posts}}
+        <li>
+            <h3>Title: {{title}}</h3>
+            <p>Post: {{body}}<p>
+            <div class="buttons" style="display: flex">
+            <form method='POST' action='/delete-post'>
+            <input type='hidden' value='{{post_id}}' name='post_id'>
+            <button>Delete Post</button></form>
+            <a href="/update-post/{{post_id}}">
+            <button>Update Post</button></a>
+            </div>
+            <br>
+        </li>
+    {{/posts}}
+    </ul>
+
+
+
+</body>
+</html>

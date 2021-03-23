@@ -1,0 +1,21 @@
+<html>
+<head></head>
+
+<body>
+    <h1>Update Post</h1>
+{{#posts}}    
+<form method='POST' action='/update-post'>
+  Original Title: <br><b><i>{{title}}</i></b><br><br>
+  New Title:
+  <input type='text' placeholder='{{title}}' size="50" maxlength="200" name='title'><br><br><br><br>
+  Original Text:<br> <i>{{body}}</i><br><br>
+  New Text:
+  <textarea placeholder='{{body}}' rows="8" cols="50" name='body'></textarea><br><br>
+  <input type='hidden' value='{{post_id}}' name='post_id'>
+  <button>Update Post</button>
+</form>
+    <a href="/">Return Home</a>
+{{/posts}}
+
+</body>
+</html>

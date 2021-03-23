@@ -12,8 +12,8 @@ router.get('/unique', (req,res) => {
 // Trip-Related Requests
 
 router.post('/add-trip', (req, res) => {
-    
-    const destination = req.body.destination 
+
+    const destination = req.body.destination
     const imageURL = req.body.imageURL
     const departureDate = req.body.departureDate
     const returnDate = req.body.returnDate
@@ -21,9 +21,9 @@ router.post('/add-trip', (req, res) => {
     let trip = {tripId: uuidv4(), destination: destination, imageURL: imageURL, departureDate: departureDate, returnDate, returnDate}
 
     trips.push(trip)
-    
+
     res.redirect("/profile")
-    
+
 })
 
 router.post("/delete-trip", (req, res) => {
@@ -33,6 +33,6 @@ router.post("/delete-trip", (req, res) => {
   })
 
 router.get("/update/:tripId", (req,res) => {
-    const tripId = req.params.tripId
+    let tripId = req.params.tripId
     res.render("update-trip", {tripId: tripId})
 })
