@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nicole Aldurien's Page</title>
+  <meta name="description" content="Nicole Aldurien's Assignment">
+  <meta name="author" content="Nicole Aldurien">
+</head>
+    <body>
+    <a href="/">Return Home</a>
+
+    <h1>Display Movies By Genre</h1>
+        <form method="POST" action="/genre">
+            <label for="genre">Genre: </label>
+            <select name="genre" id="genre">
+                <option disabled>Please select a genre:</option>
+                <option value="action">Action</option>
+                <option value="comedy">Comedy</option>
+                <option value="drama">Drama</option>
+                <option value="fantasy">Fantasy</option>
+                <option value="horror">Horror</option>
+                <option value="nonfiction">Non-fiction</option>
+                <option value="sci-fi">Science Fiction</option>
+                <option value="western">Western</option>
+            </select><br><br>
+            <button>Get Movies</button>
+            <br>
+        </form>
+    {{#filteredMovies}}
+    <h1>{{genre}} Movies>/h1>
+    <br>
+    <ul style="list-style: none">
+        <li>
+        <h2>{{title}}</h2>
+        <img src='{{posterURL}}' width="260px" height="426px" alt='poster for selected movie'><br><br>
+        </li>
+    </ul>
+    {{/filteredMovies}}
+
+    </body>
+    </html>

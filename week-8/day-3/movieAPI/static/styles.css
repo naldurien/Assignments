@@ -1,0 +1,25 @@
+.button-row-div {
+    display: flex;
+}
+
+body {
+    padding: 3%;
+    /* PHOTO BY ROB LAUGHTER ON UNSPLASH.COM */
+    background-image: url('curtain.jpg');
+    background-size: cover;
+    background-color: rgb(172, 4, 4);
+    color: white
+
+}
+
+a:link {
+    color: white
+}
+
+a:visited {
+    color: red
+}
+
+a:hover {
+    color: yellow;
+}
