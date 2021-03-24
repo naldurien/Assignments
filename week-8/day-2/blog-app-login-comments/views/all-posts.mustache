@@ -10,7 +10,10 @@
         <li>
             <h3>Title: {{title}}</h3>
             <p>Post: {{body}}<p>
-            <form>
+            <a href="/add-comment/{{post_id}}">
+            <button>See All Comments/Leave Comment</button></a>
+            <form method="POST" action="/add-comment">
+            <input type="hidden" value="{{post_id}}" name="post_id">
             <label for="commentTextBox">Comment from {{username}}:</label><br>
             <textarea placeholder='Add Comment' id="commentTextBox" rows="3" cols="50" name='body'></textarea><br>
             <button>Submit Comment</button>

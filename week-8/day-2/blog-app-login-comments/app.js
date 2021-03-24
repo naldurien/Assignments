@@ -29,9 +29,10 @@ app.get('/', (req, res) => {
 // Show All Posts From DB
 app.get('/all-posts', authenticate, (req, res) => {
     let username = req.session.username
+    let userId = req.session.userId
     db.any('SELECT title, body, post_id FROM posts')
         .then(posts => {
-            res.render('all-posts', {posts: posts, username: username})
+            res.render('all-posts', {posts: posts, username: username, userId: userId})
         })
 })
 
@@ -140,11 +141,68 @@ app.post('/update-post', (req,res) => {
 })
 
 
+// ADD A COMMENT
+app.post('/add-comment', (req,res) => {
+    const username = req.session.username
+    const userId = req.session.userId
+    const body = req.body.body
+    const postId = req.body.post_id
+    db.none('INSERT INTO comments(username, body, post_id) VALUES($1, $2, $3)',[username, body, postId])
+    .then(() => {
+        res.redirect('all-posts')
+    })
+})
+
+
 // LOG OUT
 app.get('/logout', function(req, res, next) {
     req.session.destroy()
     res.redirect('/')
 })
+
+
+// VIEW A POST'S COMMENTS - - NOT WORKING YET
+// app.get('/add-comment/:post_id', (req, res) => {
+//     const postId = req.params.post_id
+//     db.any('SELECT posts.post_id, title, body, username, comment_body FROM posts JOIN comments on posts.post_id = comments.post_id WHERE posts.post_id = $1', [postId])
+//     .then(result => {
+//         let postObject = formatPostsAndCommentsForDisplay(result)
+        
+//         for(let i = 0; i < postObject.length; i++) {
+//             let postCommentTotal = comments.length
+//             for (let j = 0; j < comments.length; j++) {
+//                 let username = comments[j].username
+//                 let comment_body = comments[j].comment_body
+                
+//             }
+//             console.log(comments)
+//             let post = {title: title, body: body, }
+//         }
+//         res.render('add-comment', {posts: postsObject, postCommentTotal: postCommentTotal})
+//     })
+// })
+
+
+function formatPostsAndCommentsForDisplay(list) {
+  let posts = []
+
+  list.forEach((item) => {
+      if(posts.length == 0) {
+        let post = {postId: item.post_id, title: item.title, body: item.body, comments: [{username: item.username, comment_body: item.comment_body}]}
+        posts.push(post)
+      } else {
+        let post = posts.find(post => post.postId == item.postId)
+        if(post) {
+            post.comments.push({username: item.username, comment_body: item.comment_body})
+        } else {
+            let post = {postId: item.post_id, title: item.title, body: item.body, comments: [{username: item.username, comment_body: item.comment_body}]}
+            posts.push(post)
+        }
+      }
+  })
+  return posts
+}
+
 
 // START APP 
 app.listen(3000,() => {
