@@ -1,6 +1,11 @@
-# Getting Started with Create React App
+# First React Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The goal of this assigment was to gain familiarity breaking down a site into components and putting those components into use. We were given a set image of a theoretical site to work from. "Styling not mandatory", so I went for an "eh, close enough" approach. Making sure I knew how to link the CSS but not trying to get things dead-on in an appearance match.
+
+
+# My Page
+![](https://github.com/nicolealdurien/Assignments/blob/main/week-11/nicole-react/public/mine.png?raw=true)
+
 
 ## Available Scripts
 
