@@ -1,9 +1,9 @@
 const { mapValuesSeries } = require('async')
 const express = require('express')
-const app = express() 
+const app = express()
 const mustacheExpress = require('mustache-express')
 const { v4: uuidv4 } = require('uuid')
-const pgp = require('pg-promise')() 
+const pgp = require('pg-promise')()
 const connectionString = 'postgres://localhost:5432/blogdb'
 const db = pgp(connectionString)
 const session = require('express-session')
@@ -20,6 +20,7 @@ app.use(session({
     saveUninitialized: true,
     resave: false
 }))
+// Remember routes must come AFTER basically all other app.use middleware
 
 // Home Page Request
 app.get('/', (req, res) => {
@@ -36,7 +37,7 @@ app.get('/all-posts', authenticate, (req, res) => {
         })
 })
 
-// Get Registration Page 
+// Get Registration Page
 app.get('/register', (req, res) => {
     res.render('register')
 })
@@ -49,7 +50,7 @@ app.post('/register', (req, res) => {
 
     bcrypt.genSalt(10, function (error, salt) {
         bcrypt.hash(password, salt, function (error, hash) {
-            // if there is no error 
+            // if there is no error
             if (!error) {
                 db.none('INSERT INTO users(username, password) VALUES($1, $2)', [username, hash])
                     .then(() => {
@@ -72,8 +73,8 @@ app.post('/login', (req, res) => {
             bcrypt.compare(password, user.password, function (error, result) {
                 if (result) {
                     if(req.session) {
-                        req.session.userId = user.user_id 
-                        req.session.username = user.username 
+                        req.session.userId = user.user_id
+                        req.session.username = user.username
                         res.redirect('/my-blog')
                     }
                 } else {
@@ -133,7 +134,7 @@ app.post('/update-post', (req,res) => {
     let postId = parseInt(req.body.post_id)
     let title = req.body.title
     let body = req.body.body
-    
+
     db.none('UPDATE posts SET title = $1, body = $2 WHERE post_id = $3', [title, body, postId])
     .then(() => {
         res.redirect('my-blog')
@@ -167,13 +168,13 @@ app.get('/logout', function(req, res, next) {
 //     db.any('SELECT posts.post_id, title, body, username, comment_body FROM posts JOIN comments on posts.post_id = comments.post_id WHERE posts.post_id = $1', [postId])
 //     .then(result => {
 //         let postObject = formatPostsAndCommentsForDisplay(result)
-        
+
 //         for(let i = 0; i < postObject.length; i++) {
 //             let postCommentTotal = comments.length
 //             for (let j = 0; j < comments.length; j++) {
 //                 let username = comments[j].username
 //                 let comment_body = comments[j].comment_body
-                
+
 //             }
 //             console.log(comments)
 //             let post = {title: title, body: body, }
@@ -204,7 +205,7 @@ function formatPostsAndCommentsForDisplay(list) {
 }
 
 
-// START APP 
+// START APP
 app.listen(3000,() => {
     console.log('Server is running...')
 })

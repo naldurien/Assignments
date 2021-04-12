@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nicole Aldurien's Page</title>
+  <meta name="description" content="Nicole Aldurien's Assignment">
+  <meta name="author" content="Nicole Aldurien">
+<link rel="stylesheet" href="styles.css">
+</head>
+    <body>
+        <h1 text-align="center">Welcome to the DCMDb (DigitalCrafts Movie Database)</h1>
+        <br>
+        <h2><a href='/best-of'>See Our Users' Most Highly Rated Movies!</a></h2>
+        <h2><a href='/reviews'>See Our Users' Movie Reviews!</a></h2>
+        <br>
+        <h1>Add A New Movie</h1>
+        <form method="POST" action="/add-movie">
+            Title: <input type='text' placeholder='Enter title' name='title' required /><br><br>
+            Director: <input type='text' placeholder='Enter director' name='director' required /><br><br>
+            <label for="genre">Genre: </label>
+            <select name="genre" id="genre">
+                <option disabled>Please select a genre:</option>
+                <option value="Action">Action</option>
+                <option value="Comedy">Comedy</option>
+                <option value="Drama">Drama</option>
+                <option value="Fantasy">Fantasy</option>
+                <option value="Horror">Horror</option>
+                <option value="Nonfiction">Non-fiction</option>
+                <option value="Sci-fi">Science Fiction</option>
+                <option value="Western">Western</option>
+            </select><br><br>
+            Rating (out of 10): <input type='number' placeholder='10' name='rating' min="0" max="10" required /><br><br>
+            <button>Add Movie</button>
+        </form>
+        <br>
+            <h1>All Movies</h1>
+            <ul style="list-style: none">
+            {{#allMovies}}
+            <br>
+            <li>
+            <h2>{{title}}</h2>
+            <b>Directed by:</b> {{director}}<br>
+            <b>Genre:</b> {{genre}}<br>
+            <b>Rating: </b> {{rating}}/10<br><br>
+            <div class="button-row-div">
+            <a href="/reviews/{{id}}"><button>See Reviews</button></a>&nbsp;&nbsp;
+            <form method="POST" action="/delete"> 
+            <input type="hidden" value="{{id}}" name="movieId" />
+            <button>Delete Movie</button>
+            </form>&nbsp;&nbsp;
+            <a href="/update/{{id}}"><button>Update Movie</button></a>
+            </form>
+            </div>
+            </li>
+            {{/allMovies}}
+        </ul>
+        <br>
+
+    {{^allMovies}}
+        <h1>There are currently no movies in your database! Please add a movie.</h1>
+    {{/allMovies}}
+    </body>
+</html>

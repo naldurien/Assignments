@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nicole Aldurien's Page</title>
+  <meta name="description" content="Nicole Aldurien's Assignment">
+  <meta name="author" content="Nicole Aldurien">
+</head>
+    <body>
+    <h3><a href="/">Return Home</a></h3>
+{{#movie}}
+    <h1>Reviews for {{title}}</h1>
+ 
+     <h3>Add Review</h3>
+        <form method="POST" action="/add-review">
+        <input type="hidden" value="{{id}}" name="movieId" />
+        <input type="text" placeholder="Enter your username" name="username" required/><br><br>
+        <input type="text" placeholder="Title your review" name="title" size="50" required/><br><br>
+        <textarea placeholder="Enter your review" name="body" rows="4" cols="50" required/></textarea><br>
+        <button>Save Review</button>
+        </form>
+        <br><br>
+        <ul style="list-style: none">
+            {{#reviews}}
+                <li>
+                <b>Title:</b> <i>{{title}}</i><br>
+                <b>Written by:</b><i> {{username}}</i><br><br>
+                {{body}}<br><br>
+                <form method="POST" action="/delete-review">
+                <input type="hidden" value="{{id}}" name="reviewId" />
+                <button>Delete Review</button>
+                </form><br><br><br><br>
+                </li>
+            {{/reviews}}
+        </ul>
+        
+        {{^reviews}}
+        <h1>There are no reviews for this movie yet. Be the first to add one!</h1>
+        {{/reviews}}
+        {{/movie}}
+</body>
+</html>

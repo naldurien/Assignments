@@ -1,0 +1,19 @@
+.BasicArticle {
+    text-align: left;
+    margin: 45px;
+    padding: 10px;
+}
+
+.BasicArticle-title {
+    text-align: left;
+    color: rgb(75, 167, 243)
+}
+
+.BasicArticle-commentbar {
+    display:flex;
+    justify-content: space-evenly;
+    background-color: orange;
+    text-align: left;
+    color: white;
+    font-weight: bold;
+}

@@ -6,16 +6,15 @@ const session = require('express-session')
 const models = require('./models')
 const { Op } = require('sequelize')
 
-app.use(express.static('static'))
-app.engine('mustache', mustacheExpress())
 app.use(express.urlencoded())
-app.set('views', './views')
-app.set('view engine', 'mustache')
 app.use(session({
     secret: 'THISISSECRETKEY',
     saveUninitialized: true
 }))
-
+app.use(express.static('static'))
+app.engine('mustache', mustacheExpress())
+app.set('views', './views')
+app.set('view engine', 'mustache')
 
 // DISPLAY ALL MOVIES WITH SEQUELIZE
 app.get("/", (req, res) => {
@@ -84,7 +83,6 @@ app.post('/delete', (req, res) => {
             id: movieId
         }
     }).then(deletedMovie => {
-        console.log('Movie has been deleted!')
         res.redirect('/')
     })
 })
@@ -106,18 +104,18 @@ app.get('/best-of', (req, res) => {
 
 
 // DISPLAY MOVIES BY GENRE WITH SEQUELIZE - NONFUNCTIONAL
-
 app.get("/genre", (req, res) => {
     res.render("genre")
 })
 
 
-app.post('genre', (req, res) => {
-    const chosenGenre = req.body.genre
-    console.log(chosenGenre)
+app.post('/genre', (req, res) => {
+    const genre = req.body.genre
     models.Movie.findAll({
         where: {
-            genre: chosenGenre
+            genre: {
+                [Op.iLike]: genre
+            }
         }
     }).then(movies => {
         res.render('genre', {movies: movies})
@@ -125,11 +123,63 @@ app.post('genre', (req, res) => {
 })
 
 
+// MOVIE REVIEWS
+app.get('/reviews/:movieId', (req, res) => {
+  const movieId = parseInt(req.params.movieId)
+
+  models.Movie.findByPk(movieId, {
+      include: [
+          {
+              model: models.Review,
+              as: 'reviews'
+          }
+      ]
+  })
+  .then(movie => {
+      res.render('reviews', {movie: movie})
+  })
+})
+
+app.post('/add-review',  (req, res) => {
+    const movieId = req.body.movieId
+    const username = req.body.username
+    const title = req.body.title
+    const body = req.body.body
+
+    let review = models.Review.build({
+      title: title,
+      username: username,
+      body: body,
+      movie_id: movieId
+    })
+
+    review.save().then(savedReview => {
+        res.redirect('/')
+    }).catch(error => {
+      res.send('Unable to save review and/or reload page.')
+    })
+})
+
+// DELETE A REVIEW
+app.post('/delete-review', (req, res) => {
+    const reviewId = req.body.reviewId
+    console.log(reviewId)
+    models.Review.destroy({
+        where: {
+            id: reviewId
+        }
+    }).then(deletedReview => {
+        console.log('Review has been deleted!')
+        res.redirect('/')
+    })
+})
+
 
 // EXPOSE API
 app.get('/api/movies', (req, res) => {
     res.json(movies)
 })
+
 
 // OLD USER REGISTRATION/LOGIN STUFF
 app.get('/register', (req, res) => {
