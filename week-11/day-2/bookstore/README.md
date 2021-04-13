@@ -4,6 +4,8 @@ The assignment was use React to create a (visual-only) landing page for a theore
 
 https://raw.githubusercontent.com/benoitvallon/100-best-books/master/books.json
 
+# Full View:<br>
+![](https://github.com/nicolealdurien/Assignments/blob/main/week-11/day-2/bookstore/src/wider.png?raw=true)
 
-Mobile View:
+# Mobile View:<br>
 ![](https://github.com/nicolealdurien/Assignments/blob/main/week-11/day-2/bookstore/src/mobile.png?raw=true)
