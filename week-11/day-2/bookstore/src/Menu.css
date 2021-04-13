@@ -1,0 +1,21 @@
+.Menu {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-around;
+    background-color: tan;
+    margin: 20px;
+    color: white
+}
+
+.Menu-title {
+    background-color: #8b4513;
+    padding: 20px;
+    font-style: italic;
+    border-radius: 25px
+}
+
+.Menu-links {
+    background-color: tan;
+    padding: 20px;
+    border-radius: 25px
+}
