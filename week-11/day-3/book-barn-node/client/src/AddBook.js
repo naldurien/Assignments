@@ -38,7 +38,7 @@ class AddBook extends Component {
         }).then(response => response.json())
         .then(result=> {
             if(result.success) {
-                console.log(this.props.history)
+                console.log(this.props)
                 this.props.history.push('/books')
             }
         })

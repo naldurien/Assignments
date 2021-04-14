@@ -5,6 +5,7 @@ import BookList from './BookList'
 class App extends Component {
   constructor() {
     super()
+
     this.state = {
       books: []
     }
@@ -27,7 +28,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <AddBook />
+        <AddBook history = {this.props.history}/>
         <BookList books = {this.state.books}/>
       </div>
     )
