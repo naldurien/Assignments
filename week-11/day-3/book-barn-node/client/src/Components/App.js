@@ -28,7 +28,6 @@ class App extends Component {
   render() {
     return (
       <div>
-        <AddBook history = {this.props.history}/>
         <BookList books = {this.state.books}/>
       </div>
     )
