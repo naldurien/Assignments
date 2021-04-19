@@ -26,10 +26,6 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        ctr: state.count
-    }
-}
+
 
 export default connect(null, mapDispatchToProps)(IncDec)

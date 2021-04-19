@@ -26,11 +26,6 @@ function AddSubtract(props) {
     )
 }
 
-const mapStateToProps = (state) => {
-    return {
-        ctr: state.count
-    }
-}
 
 const mapDispatchToProps = (dispatch) => {
     return {
