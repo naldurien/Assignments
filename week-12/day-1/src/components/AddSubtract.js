@@ -19,7 +19,7 @@ function AddSubtract(props) {
 
     return (
         <div>
-            <input type="text" onChange = {handleOnChange} /><br/>
+            <input type="text" onChange = {handleOnChange} id="textbox"/><br/>
             <button onClick = {handleAdd}>ADD</button>
             <button onClick = {handleSubtract}>SUBTRACT</button>
         </div>
@@ -39,4 +39,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(AddSubtract) 
+export default connect(null, mapDispatchToProps)(AddSubtract)
