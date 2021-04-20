@@ -1,4 +1,5 @@
 import {connect} from 'react-redux'
+import * as actionCreators from '../store/creators/actionCreators'
 
 function IncDec(props) {
 
@@ -21,8 +22,8 @@ function IncDec(props) {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onIncrement: () => dispatch({type: 'INCREMENT'}),
-        onDecrement: () => dispatch({type: 'DECREMENT'})
+        onIncrement: () => dispatch(actionCreators.incrementCounter()),
+        onDecrement: () => dispatch(actionCreators.decrementCounter())
     }
 }
 

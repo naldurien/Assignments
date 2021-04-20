@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
 import { useState } from 'react'
+import * as actionCreators from '../store/creators/actionCreators'
 
 function AddSubtract(props) {
 
@@ -29,8 +30,8 @@ function AddSubtract(props) {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onAdd: (value) => dispatch({type: 'ADD', payload: value}),
-        onSubtract: (value) => dispatch({type: 'SUBTRACT', payload: value})
+        onAdd: (value) => dispatch(actionCreators.addToCounter(value)),
+        onSubtract: (value) => dispatch(actionCreators.subtractFromCounter(value))
     }
 }
 
