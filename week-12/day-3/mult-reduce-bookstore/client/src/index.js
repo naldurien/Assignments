@@ -8,6 +8,7 @@ import { createStore } from 'redux'
 import reducer from './stores/reducer';
 import { Provider } from 'react-redux';
 import HomePage from './components/HomePage';
+import RegistrationPage from './components/RegistrationPage';
 import BookListDisplay from './components/BookListDisplay';
 import AddBookPage from './components/AddBookPage';
 import UpdateBookPage from './components/UpdateBookPage';
@@ -21,10 +22,11 @@ ReactDOM.render(
       <BrowserRouter>
         <BaseLayout>
           <Switch>
-            <Route exact path = "/" component = {HomePage} />
-            <Route exact path = "/books" component = {BookListDisplay} />
-            <Route exact path = "/add-book" component = {AddBookPage} />
-            <Route exact path = "/update/:book_id" component = {UpdateBookPage} />
+            <Route exact path = '/' component = {HomePage} />
+            <Route exact path = '/register' component = {RegistrationPage} />
+            <Route exact path = '/books' component = {BookListDisplay} />
+            <Route exact path = '/add-book' component = {AddBookPage} />/add-book" component = {AddBookPage} />
+            <Route exact path = '/update/:book_id' component = {UpdateBookPage} />
           </Switch>
         </BaseLayout>
       </BrowserRouter>

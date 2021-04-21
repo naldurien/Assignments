@@ -4,8 +4,12 @@ import * as actionCreators from '../stores/creators/actionCreators'
 
 
 class BookList extends Component {
-    handleAddToCart = (book) => {
-        this.props.onAddToCart(book)
+    handleCartAdd = (book) => {
+        this.props.onCartAdd(book)
+    }
+
+    handleFavAdd = (book) => {
+        this.props.onFavAdd(book)
     }
 
     render() {
@@ -23,7 +27,10 @@ class BookList extends Component {
                             <h5>by {book.author}</h5>
                         </div>
                         <div>
-                            <button class = 'button' onClick = {() => this.handleAddToCart(book)}>Add to Cart</button>
+                            <button class = 'button' onClick = {() => this.handleFavAdd(book)}>Save As Favorite</button>
+                        </div><br /> 
+                        <div>
+                            <button class = 'button' onClick = {() => this.handleCartAdd(book)}>Add to Cart</button>
                         </div><br /> 
                         <div>
                             <a href={`/update/${book.book_id}`} class = 'button'>Update This Book</a>
@@ -48,7 +55,8 @@ class BookList extends Component {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onAddToCart: (book) => dispatch(actionCreators.onAddToCart(book))
+        onCartAdd:(book) => dispatch(actionCreators.ADD_TO_CART(book)),
+        onFavAdd:(book) => dispatch(actionCreators.ADD_FAVORITE(book))
     }
 }
 

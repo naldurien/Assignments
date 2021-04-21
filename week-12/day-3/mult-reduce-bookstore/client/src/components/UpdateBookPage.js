@@ -6,7 +6,7 @@ class UpdateBookPage extends Component {
     constructor (props) {
         super(props)
         const { book_id } = props.match.params
-        this.state ={
+        this.state = {
             book_id : book_id,
             title: '',
             author: '',
@@ -24,10 +24,8 @@ class UpdateBookPage extends Component {
         })
     }
 
-    handleSave =() => {
-
+    handleSave = () => {
        const book_id = this.state.book_id
-       console.log(book_id)
         fetch (`http://localhost:8080/update/${book_id}`,{
             method: 'PUT',
             headers: {
@@ -52,13 +50,16 @@ class UpdateBookPage extends Component {
 
 
     render() {
+        const book = this.props.book
+        console.log(book)
+        
         return(
             <div>
                 <div>
                     <h1> Update Book </h1>
                 </div><br></br>
                 <div>
-                    <input type="text" onChange = {this.handleOnChange} placeholder="Title" name="title" />
+                    <input type="text" onChange = {this.handleOnChange} placeholder="Title" name="title"/>
                 </div><br></br>
                 <div>
                     <input type="text" onChange = {this.handleOnChange} placeholder="Author" name="author" />

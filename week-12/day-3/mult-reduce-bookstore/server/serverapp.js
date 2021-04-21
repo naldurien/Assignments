@@ -4,6 +4,7 @@ const app = express()
 const pgp = require('pg-promise')()
 const connectionString = 'postgres://localhost:5432/bookstoredb'
 const db = pgp(connectionString)
+const bcrypt = require('bcryptjs')
 
 app.use(cors())
 app.use(express.json())
@@ -54,9 +55,21 @@ app.put('/update/:book_id', (req, res) => {
         .then(() => {
             res.json({success: true, message: 'Book updated successfully!'})
         })
-
-
 })
+
+app.post('/register', async (req, res) => {
+    let username = req.body.username
+    let email = req.body.email
+    let password = req.body.password
+    const salt = await bcrypt.genSalt(10)
+    let hashedPassword = await bcrypt.hash(password, salt)
+
+    let registeredUser = await db.none('INSERT INTO users(username, email, password) VALUES($1, $2, $3, $4, $5, $6)', [username, email, hashedPassword])
+        .then(() => {
+            res.json({success: true, message: 'New user registered successfully!'})
+        })
+})
+
 
 app.listen(8080, () => {
     console.log('Butterfly in the sky...')
