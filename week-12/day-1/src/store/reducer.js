@@ -1,5 +1,6 @@
 const initialState = {
-    count: 27
+    count: 27,
+    randomImages: []
 }
 
 const reducer = (state = initialState, action) => {
@@ -22,6 +23,11 @@ const reducer = (state = initialState, action) => {
         return {
             ...state,
             count: state.count - action.payload
+        }
+    } else if(action.type === 'ADD_RANDOM_IMAGE') {
+        return {
+          ...state,
+          randomImages: state.randomImages.concat(action.payload)
         }
     }
     return state

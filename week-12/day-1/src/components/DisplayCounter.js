@@ -3,15 +3,15 @@ import {connect} from 'react-redux'
 function DisplayCounter(props) {
   return (
     <div>
-    <h1>Counter Built With Redux</h1>
-    <h1>{props.ctr}</h1>
+    <h2>Counter Built With Redux</h2>
+    <h2>{props.ctr}</h2>
     </div>
   )
 }
 
 const mapStateToProps = (state) => {
   return {
-    ctr: state.count  
+    ctr: state.count
   }
 }
 

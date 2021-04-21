@@ -3,6 +3,7 @@ import '../App.css';
 import IncDec from './IncDec'
 import DisplayCounter from './DisplayCounter';
 import AddSubtract from './AddSubtract';
+import RandomImage from './RandomImage';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <DisplayCounter/>
         <IncDec/>
         <AddSubtract />
+        <RandomImage />
       </header>
     </div>
   );
