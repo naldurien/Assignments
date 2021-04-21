@@ -23,10 +23,13 @@ export class Menu extends Component {
                     <button><NavLink to= "/add-book">Add A Book</NavLink></button>
                 </div>:null}
                 {this.props.isLoggedIn ?<div>
-                    <button><NavLink to= "/my-cart">Cart</NavLink></button>
+                    <button><NavLink to= "/cart">Cart</NavLink></button>
                 </div>:null}
                 {!this.props.isLoggedIn ?<div>
                     <button onClick = {() => this.props.onLogin()}>Log In</button>
+                </div>:null}
+                {!this.props.isLoggedIn ?<div>
+                    <button><NavLink to= "/register">Register</NavLink></button>
                 </div>:null}
                 {this.props.isLoggedIn ?<div>
                     <button onClick = {() => this.props.onLogout()}><NavLink to= "/">Log Out</NavLink></button>
@@ -46,7 +49,7 @@ const mapDispatchToProps = (dispatch) => {
 
 const mapStateToProps = (state) => {
     return {
-        isLoggedIn: state.isAuthenticated
+        isLoggedIn: state.authR.isAuthenticated
     }
 }
 
