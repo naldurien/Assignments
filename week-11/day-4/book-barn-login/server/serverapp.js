@@ -28,9 +28,9 @@ serverapp.get('/books', (req, res) => {
 // POST WITH NO PERSISTENCE
 // serverapp.post('/books', (req, res) => {
 
-//   const title = req.body.title 
+//   const title = req.body.title
 //   const author = req.body.author
-//   const imageURL = req.body.imageURL 
+//   const imageURL = req.body.imageURL
 
 //   let book = {title: title, author: author, imageURL: imageURL}
 //   books.push(book)
@@ -40,22 +40,22 @@ serverapp.get('/books', (req, res) => {
 
 // POST TO POSTGRES SERVER
 serverapp.post('/books', (req, res) => {
-  const title = req.body.title 
+  const title = req.body.title
   const author = req.body.author
-  const imageURL = req.body.imageURL 
+  const imageURL = req.body.imageURL
 
   let book = models.Book.build({
-    title: title, 
-    author: author, 
+    title: title,
+    author: author,
     imageURL: imageURL
   })
-
+  console.log(book)
   book.save().then((savedBook) => {
     console.log(savedBook)
     res.json({message: 'Book is saved!'})
   })
 })
 
-serverapp.listen(8000, () => {
+serverapp.listen(7000, () => {
   console.log('Once upon a time...')
 })
