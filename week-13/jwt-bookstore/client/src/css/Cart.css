@@ -1,0 +1,25 @@
+.cart-display {
+    padding: 10px;
+    color: sienna;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px
+}
+
+h1 {
+    padding: 10px;
+    color: sienna;
+}
+
+.button {
+    font: bold 16px Arial;
+    text-decoration: none;
+    background-color: sienna;
+    color: white;
+    padding: 4px 12px 4px 12px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #sienna;
+    border-bottom: 1px solid #sienna;
+    border-left: 1px solid #CCCCCC;
+    border-radius: 15%
+  }

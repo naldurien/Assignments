@@ -1,0 +1,5 @@
+.home-container {
+    /* Photo by Janko Ferlic on Unsplash.com */
+    background-image: url('./bookshelf.jpg');
+    height: 800px;
+}
