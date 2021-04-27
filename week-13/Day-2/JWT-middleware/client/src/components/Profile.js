@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import { setAuthenticationHeader } from '../utils/authenticate'
+import { connect } from 'react-redux'
 
-function Profile() {
+function Profile(props) {
 
     const [books, setBooks] = useState([])
 
@@ -23,32 +25,31 @@ function Profile() {
         })
     }
     
-    // const fetchMyBooks = () => {
-    //     const token = localStorage.getItem('jsonwebtoken')
-    //     const username = localStorage.getItem('username')
-    //     fetch(`http://localhost:8080/my-books/${username}`, {
-    //         method: 'GET',
-    //         headers: {
-    //             'Authorization': `Bearer ${token}`
-    //         }
-    //     })
-    //     .then(response => response.json())
-    //     .then(books => {
-    //         setBooks(books)
-    //     })
-    // }
-
     const bookItems = books.map((book, index) => {
-        return <li key={index}>{book.title} by {book.author}<br/></li>
+        return <li key={index}>{book.title} by {book.author}<br/><br/></li>
     })
+
+    const signOut = () => {
+        localStorage.removeItem('jsonwebtoken')
+        localStorage.removeItem('username')
+        setAuthenticationHeader(null)
+        props.onLogout()
+        props.history.push('/')
+    }
     return (
         <div>
             <h1>Profile Page</h1>
             <h3>My Books</h3>
             {bookItems}
-            {/* <button onClick={() => fetchMyBooks()}>View My Books</button> */}
+            <button onClick={() => signOut()}>Sign Out</button>
         </div>
     )
 }
 
-export default Profile
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onLogout: () => dispatch({type: 'ON_LOGOUT'})
+    }
+}
+
+export default connect(null, mapDispatchToProps)(Profile)

@@ -3,6 +3,7 @@ const app = express()
 const jwt = require('jsonwebtoken')
 const cors = require('cors')
 const authenticate = require('./authMiddleware')
+require('dotenv').config()
 
 app.use(cors())
 app.use(express.json())
@@ -33,29 +34,7 @@ app.get('/my-books/:username', authenticate, (req, res) => {
     res.json(userBooks)
 })
 
-// OLD PRE-MIDDLEWARE VERSION
-// app.get('/my-books/:username', (req, res) => {
-//     let headers = req.headers['authorization']
-//     if(headers) {
-//         const token = headers.split(' ')[1]
-//         // const token1 = headers
-//         const decoded = jwt.verify(token, 'MYSECRET27')
-//         if(decoded) {
-//             const username = decoded.username 
-//             const authUser = users.find(user => user.username == username)
-//             if(authUser) {
-//                 const userBooks = myBooks.filter(book => book.username == username)
-//                 res.json(userBooks)
-//             } else {
-//                 res.json({error: 'Unable to authenticate'})
-//             }
-//         } else {
-//             res.json({error: 'Unable to authenticate'})
-//         }
-//     } else {
-//         res.json({error: 'Required headers are missing...'})
-//     }  
-// })
+
 
 app.post('/login', (req, res) => {
     let username = req.body.username
@@ -63,7 +42,7 @@ app.post('/login', (req, res) => {
 
     let authUser = users.find((user) => user.username == username && user.password == password)
     if(authUser) {
-        const token = jwt.sign({username: username}, 'MYSECRET27')
+        const token = jwt.sign({username: username}, process.env.JWT_KEY)
       res.json({success: true, token: token, username: username});
     } else {
       res.json({success:false});

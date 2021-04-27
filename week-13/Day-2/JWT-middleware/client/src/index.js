@@ -11,7 +11,7 @@ import { createStore } from 'redux'
 import reducer from './store/reducer'
 import { Provider } from 'react-redux'
 import { setAuthenticationHeader } from './utils/authenticate'
-// import requireAuth from './components/requireAuth'
+import requireAuth from './components/requireAuth'
 
 const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
@@ -25,7 +25,7 @@ ReactDOM.render(
     <BaseLayout>
     <Switch>
     <Route exact path = '/' component = {Login} />
-    <Route exact path = '/profile' component = {Profile} />
+    <Route exact path = '/profile' component = {requireAuth(Profile)} />
     </Switch>
     </BaseLayout>
     </BrowserRouter>
