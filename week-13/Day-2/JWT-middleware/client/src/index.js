@@ -7,9 +7,20 @@ import BaseLayout from './components/BaseLayout'
 import Login from './components/Login'
 import Profile from './components/Profile'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { createStore } from 'redux'
+import reducer from './store/reducer'
+import { Provider } from 'react-redux'
+import { setAuthenticationHeader } from './utils/authenticate'
+// import requireAuth from './components/requireAuth'
+
+const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+
+const token = localStorage.getItem('jsonwebtoken')
+setAuthenticationHeader(token)
 
 ReactDOM.render(
   <React.StrictMode>
+    <Provider store = {store}>
     <BrowserRouter>
     <BaseLayout>
     <Switch>
@@ -18,6 +29,7 @@ ReactDOM.render(
     </Switch>
     </BaseLayout>
     </BrowserRouter>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

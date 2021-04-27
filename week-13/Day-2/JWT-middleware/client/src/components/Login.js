@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { setAuthenticationHeader } from '../utils/authenticate'
+import { connect } from 'react-redux'
 
 function Login(props) {
     const [credentials, setCredentials] = useState({})
@@ -23,6 +25,8 @@ function Login(props) {
             const token = result.token
             localStorage.setItem('jsonwebtoken', token)
             localStorage.setItem('username', result.username)
+            setAuthenticationHeader(token)
+            props.onLogin(token)
             props.history.push('/profile')
             }
         })
@@ -38,4 +42,10 @@ function Login(props) {
     )
 }
 
-export default Login
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onLogin: (token) => dispatch({type: 'ON_LOGIN', payload:token})
+    }
+}
+
+export default connect(null, mapDispatchToProps)(Login)

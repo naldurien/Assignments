@@ -10,15 +10,16 @@ function Profile() {
     }, [])
 
     const fetchMyBooks = () => {
-        const token = localStorage.getItem('jsonwebtoken')
+        // const token = localStorage.getItem('jsonwebtoken')
         const username = localStorage.getItem('username')
 
         axios.get(`http://localhost:8080/my-books/${username}`, {
-            headers: {
-                'Authorization': `Bearer ${token}`
-            }
+            // headers: {
+            //     'Authorization': `Bearer ${token}`
+            // }
         }).then(response => {
             console.log(response.data)
+            setBooks(response.data)
         })
     }
     
@@ -37,14 +38,15 @@ function Profile() {
     //     })
     // }
 
-    const bookItems = books.map((book) => {
-        return <div>{book.title} by {book.author}</div>
+    const bookItems = books.map((book, index) => {
+        return <li key={index}>{book.title} by {book.author}<br/></li>
     })
     return (
         <div>
             <h1>Profile Page</h1>
+            <h3>My Books</h3>
             {bookItems}
-            <button onClick={() => fetchMyBooks()}>View My Books</button>
+            {/* <button onClick={() => fetchMyBooks()}>View My Books</button> */}
         </div>
     )
 }

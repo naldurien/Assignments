@@ -32,9 +32,9 @@ app.get('/token', (req, res) => {
 app.get('/my-books/:username', (req, res) => {
     let headers = req.headers['authorization']
     if(headers) {
-        //const token = headers.split(' ')[1]
+        const token = headers.split(' ')[1]
         const token1 = headers
-        const decoded = jwt.verify(token1, 'MYSECRET27')
+        const decoded = jwt.verify(token, 'MYSECRET27')
         if(decoded) {
             const username = decoded.username 
             const authUser = users.find(user => user.username == username)
