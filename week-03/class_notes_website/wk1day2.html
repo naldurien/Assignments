@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>Week 1, Day 2 - Notes</title>
+		<link rel="stylesheet" href="notesStyles.css"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+    <body>
+		<img class="banner" src="images/under_construction.gif" alt="under construction banner">
+        <h1>DigitalCrafts Full-Stack Immersive Feb. 2021 Cohort</h1>
+	<h2>Week 1 Day 2 Notes</h2>
+	<p><em><a href="index.html">(Back to Main)</a></em></p><br>
+        <p><u>PYTHON</u><br><br>
+<img class="in-text-image" src="images/pythoncode.jpg" alt="Python code on a computer monitor" width="400px" height="350px"><br><br>
+- check what version you have in terminal by typing python --version or python3 --version<br><br>
+- if you don't have python 3.something, go out and <a href="https://www.python.org/downloads/">download a newer version</a><br><br>
+- good first language to start with<br><br>
+- we will be using Python for 2 weeks, then moving on<br><br>
+- Azam recommends learning one new programming language a year, even if you don't use it in your day-to-day<br><br>
+- the new hotness with Python today is MACHINE LEARNING - obviously outside the scope of this class but something you may want to look into more later<br><br>
+
+- create some python folder to work in (e.g. mkdir hello-python) and empty file (touch hello.py). All python programs should be saved with the .py extension<br><br>
+
+- open your .py file in your editor (vscode/atom/etc). at this point is has not yet been saved, so save within your editor (command-S/ctrl-S)<br><br>
+
+- vscode has built-in terminal that lets you run your code<br><br>
+
+- run file: python3 hello.py<br><br>
+
+- everything we'll be doing in class will be within the terminal; there are other frameworks <br><br><br>
+
+<u>DATA TYPES</u><br><br>
+
+# symbol: comment, ignored by the computer, only for human eyes<br>
+(JS comments:<br>
+//single-line, <br>
+/*multi-line*/)<br><br>
+
+<a href="https://press.rebus.community/programmingfundamentals/chapter/data-types/">Data Types Common to all programming languages:</a><br><br>
+String - combination of alphanumeric characters<br>
+Integer - whole numbers, no decimal values<br>
+Float - numbers that can have decimals <br>
+Boolean - True or False, Yes/No, 1/0, On/Off only - only one of two possible values, like a lightswitch<br><br>
+
+Some data types are seen in other languages (money, etc) but the ones above are common to all.<br><br><br>
+
+<u>VARIABLE - a place to store a value:</u><br><br>
+name = "Spongebob"<br>
+age = 34<br>
+pi = 3.14159<br>
+isOpen = True<br><br>
+
+- can give your variable any name you want, except reserved words like <em>for</em> or <em>while</em>. The list of reserved words can be easily Googled. Python has other uses for these words. <br><br>
+
+- descriptive names are best (x, y, z, name1, name2, name3 can be confusing) <br><br>
+
+- strings must be in quotes<br><br>
+
+- python variable naming convention uses <a href="https://medium.com/better-programming/string-case-styles-camel-pascal-snake-and-kebab-case-981407998841">SNAKE CASE</a> - all lowercase with underscores between words, like this: snake_case_var<br><br>
+
+- CAMEL CASE is used in JavaScript and some other languages: first word lowercase, no spaces, all subsequent words start with capital letter: camelCaseVar<br><br><br>
+
+
+<u>CONCANTENATING STRINGS:</u><br><br>
+concantenate: fancy word for "join together"<br>
+print (first_name + last_name)<br>
+SpongeBobSquarePants<br><br>
+
+This does not change the value of the original strings, but creates a new one. Strings are IMMUTABLE - cannot be changed. Concatenation requires memory for each new string created, so it's not ideal. It also gets tricky remembering to insert all the needed spaces to make a sentence look normal.<br><br><br>
+
+<u>STRING INTERPOLATION:</u><br><br>
+This is the better way to do it.<br>
+company = "DigitalCrafts"<br>
+cohort = "Feb 2021"<br><br>
+
+message = f"Welcome to {company} cohort {cohort}"<br><br>
+
+It automatically inserts the variable values at the placeholder locations (where the braces are).<br>
+This feature is common to most programming languages.<br><br><br>
+
+
+<a href="https://www.w3schools.com/python/python_user_input.asp">ASKING FOR USER INPUT:</a><br><br>
+input("Please enter your full name: ")<br><br>
+- This will make the program stop until it gets that user input<br><br>
+- How do we use that input? Assign it to a variable.<br><br>
+full_name = input("Please enter your full name: ")<br><br>
+- input always returns its value as a STRING; if you need to do calculations on input we'll have to change its data type (we'll see that later)<br><br><br>
+
+<u>FUNCTIONS:</u><br><br>
+- functions help us avoid duplicate code when we need to reuse it<br><br>
+- functions in Python start with DEF (definition) followed by the name of the function, parentheses for arguments, followed by a colon (don't forget the colon!). Again, remember to use descriptive names, and use snake case.<br>
+def display_user():<br><br>
+
+- In Python, indentation matters!  It doesn't use braces and end-of-line semi-colons like JavaScript, so the indentation is key to what is and isn't included within a function or within a sub-loop.<br><br>
+
+- Calling a function (actually using it): type the name of the function with its parentheses. If no arguments are needed, just leave the parentheses empty.
+display_user()<br><br>
+
+- functions should be small, reusable, and DO ONE AND ONE THING ONLY
+Azam: "A function to calculate a tip on a restaurant bill should not send an e-mail."<br><br>
+
+- "small" is relative to what the function needs to do<br><br>
+
+- you cannot call a function before you have defined it. If you wrote it starting on line 10, then go back up to line 6 and call it, this will result in an error.<br><br><br>
+
+<a href="https://www.programiz.com/python-programming/function-argument">FUNCTIONS WITH ARGUMENTS:</a><br><br>
+If you want to create a function to greet the user no matter what their name is, you need a variable that you can pass as an argument to the function. These are LOCAL variables - only available inside the function.<br><br>
+def greet(name):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print(f"Hello {name}")<br><br>
+
+greet("Mary")<br>
+greet("Alex")<br>
+etc<br><br>
+
+If you try to print(name) outside this function, you will get an error.<br><br>
+
+How many arguments can you pass? Hundreds. But "a good function is one with NO arguments" because it has no overload. They are easier to test and to work with. But it's the ideal scenario and you may not see it much in the real world. Functions with 1-3 arguments are the most common.<br><br><br>
+
+<u>RETURN VALUES:</u><br><br>
+- any line after a return in a function is NOT executed<br><br>
+- why do we return values? To use it outside the function. We pass a value to a function, the function does stuff to it, and returns the new value to us.  We can then do other things with that returned value - assign it to a variable, then print it, use it in a subsequent if statement, etc.<br><br>
+- a return value is a single value<br><br>
+- return value type is whatever data type the function produces. If the function adds integers, the return value will be an int. If it multiplies float values, it will return a float. If it concatenates strings, it will return a string.<br><br><br>
+
+<a href="https://www.w3schools.com/python/python_tuples.asp">TUPLES:</a><br><br>
+- how do you return two different pieces of information if the function stops executing after the first return statement? You need a tuple. This is common to all programming languages. Many code editors will even gray-out return statements typed after the first return statement.<br><br>
+- wrap values in parentheses with commas between - this is a tuple ("my", "tuple")
+return ("my", "tuple") will give us both values<br><br>
+
+def airport_name_and_code():<br>
+	return ("Hartsfield-Jackson Atlanta International Airport", "ATL")<br><br><br>
+
+<u>OPTIONAL ARGUMENTS:</u><br><br>
+- argument is given a default value when first declaring the function, but you can pass in a different value when calling the function and that will overwrite it.<br><br>
+- <strong>def</strong> greet_with_optional_day(name, day = "day")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print(name)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print(day)<br><br>
+
+greet_with_optional_day("Bob") prints Bob and day<br>
+greet_with_optional_day("Susan", "Friday") prints Susan and Friday<br><br><br>
+
+
+<a href="https://www.geeksforgeeks.org/type-conversion-python/">CONVERT DATA TYPES TO A NEW TYPE:</a><br>
+float()<br>
+str()<br>
+int()<br>
+(more we'll get to later...)<br>
+tuple()<br>
+set()<br>
+list()<br><br><br>
+
+<u>CONDITIONS:</u><br><br>
+- conditions always start with IF.  If I'm over 21, I can buy alcohol, etc.<br><br>
+- you can set a condition that will only execute if the "if statement" is true<br><br>
+- you can create or not create an else statement that will execute when the if statement is false. It's not required.<br><br>
+- don't forget your indentation! all statements to be executed when the if statement is true need to be indented under the if statement.<br><br>
+- ELIF: you can chain if statement this way. Say you want 3 different statements to print to the user based on their age: one for under 18, one for 18-35, one for over 35. One could be the if, one the elif, one the else.<br><br>
+- you can put multiple conditions in your IF statement and make them both need to be true for the statement to execute (e.g. if user_age >=18 and user_citizenship = USA)<br><br><br>
+
+<u>GIST:</u><br><br>
+- since we haven't learned GitHub fully yet<br><br>
+- go to <a href="https://gist.github.com/">gist.github.com</a><br><br>
+- name your assignments and paste them in<br><br>
+- you can do them as one big file or as three files, either way<br><br>
+- click "Create secret gist" and Gist will create a link<br><br>
+- go to our class GitHub page<br><br>
+- click on Issues<br><br>
+- in the comment section for the Day 2 assignments, paste the link<br><br><br>
+- - - - - - -<br><br>
+95% of the answers to the day's assignments will be in the class code.<br><br>
+
+(END OF WEEK 1, DAY 2 NOTES)<br><br>
+
+<a href="index.html">Back to Main</a>
+
+</p>
+
+

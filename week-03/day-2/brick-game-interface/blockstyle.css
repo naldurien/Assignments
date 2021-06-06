@@ -1,0 +1,163 @@
+.container {
+  background-color: black;
+  width: 924px;
+  height: 768px;
+  position: relative;
+}
+
+.score {
+  background-color: black;
+  text-align: right;
+  color: lightsteelblue;
+  font-weight: bold;
+  height:25px;
+  width: 924px;
+  position: absolute;
+  box-shadow: inset 2px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
+
+}
+.graybox {
+  background-color: lightsteelblue;
+  height: 743px;
+  width: 924px;
+  position: absolute;
+  margin: 25px 0px 0px 0px;
+  box-shadow: inset 2px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
+
+}
+
+.blackbox {
+  background-color: black;
+  height: 718px;
+  width: 865px;
+  position: absolute;
+  margin: 50px 25px 0px 25px;
+  box-shadow: inset 2px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
+
+}
+
+.graypaddle {
+  background-color: lightsteelblue;
+  height: 12px;
+  width: 150px;
+  margin: 755px 0px 0px 382px;
+  position: absolute;
+} 
+
+.float-container-1 {
+    width: 865px;
+    position: absolute;
+    margin: 75px 25px 0px 25px;
+}
+
+.float-container-2 {
+    width: 865px;
+    position: absolute;
+    margin: 100px 25px 0px 25px;
+}
+
+.float-container-3 {
+    width: 865px;
+    position: absolute;
+    margin: 125px 25px 0px 25px;
+}
+.float-container-4 {
+    width: 865px;
+    position: absolute;
+    margin: 150px 25px 0px 25px;
+}
+.float-container-5 {
+    width: 865px;
+    position: absolute;
+    margin: 175px 25px 0px 25px;
+}
+.float-container-6 {
+    width: 865px;
+    position: absolute;
+    margin: 200px 25px 0px 25px;
+}
+
+.float-container-7 {
+    width: 865px;
+    position: absolute;
+    margin: 225px 25px 0px 25px;
+}
+
+.float-container-8 {
+    width: 865px;
+    position: absolute;
+    margin: 250px 25px 0px 25px;
+}
+
+.float-child-red {
+    background-color: red;
+    width: 72px;
+    height: 25px;
+    float: left;
+    box-sizing: border-box;
+    box-shadow: inset 2px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
+}  
+
+.float-child-yellow {
+    background-color: yellow;
+    width: 72px;
+    height: 25px;
+    float: left;
+    box-sizing: border-box;
+    box-shadow: inset 2px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
+}  
+
+.float-child-green {
+    background-color: green;
+    width: 72px;
+    height: 25px;
+    float: left;
+    box-sizing: border-box;
+    box-shadow: inset 2px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
+}  
+
+.float-child-blue {
+    background-color: blue;
+    width: 72px;
+    height: 25px;
+    float: left;
+    box-sizing: border-box;
+    box-shadow: inset 2px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
+} 
+
+.float-child-black {
+    background-color: black;
+    width: 72px;
+    height: 25px;
+    float: left;
+    box-sizing: border-box;
+    position: relative;
+} 
+
+.white-dot-1 {
+    background-color: white;
+    width: 12px;
+    height: 12px;
+    box-sizing: border-box;
+    position: absolute;
+    margin: 126px 0px 0px 170px;
+}
+
+.white-dot-2 {
+    background-color: white;
+    width: 12px;
+    height: 12px;
+    box-sizing: border-box;
+    position: absolute;
+    margin: 126px 0px 0px 732px;
+}
+
+.white-dot-3 {
+    background-color: white;
+    width: 12px;
+    height: 12px;
+    box-sizing: border-box;
+    position: absolute;
+    margin: 302px 0px 0px 99px;
+}
+

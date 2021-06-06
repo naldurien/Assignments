@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Week 1, Day 3 - Notes</title>
+		<link rel="stylesheet" href="notesStyles.css"/>
+	</head>
+    <body>
+		<img class="banner" src="images/under_construction.gif" alt="under construction banner">
+        <h1>DigitalCrafts Full-Stack Immersive Feb. 2021 Cohort</h1>
+	<h2>Week 1 Day 3 Notes</h2>
+	<p><em><a href="index.html">(Back to Main)</a></em></p>
+
+
+<u>ARRAYS AND LOOPS</u><br><br>
+
+Arrays help us work with larger amounts of data. Rather than having<br> friend1 = alex<br> friend2 = steve<br> all the way through friend200, you can put the names in an array called <strong>friends</strong>.<br><br>
+Arrays use square brackets.<br><br>
+
+friends = ["Tom", "Dick", "Harry"]<br><br>
+
+Arrays can include mixed types of data - can have a string, boolean, and int all in the same array. This is rarely done in practice, though.<br><br>
+
+Arrays are <a href="https://medium.com/analytics-vidhya/array-indexing-0-based-or-1-based-dd89d631d11c">ZERO-INDEXED</a>, meaning that the first item in the array is the "zero-th" item.<br><br>
+
+If we do the following:<br>
+friends = ["Tom", "Dick", "Harry"]<br>
+name = friends[0]<br>
+print(name)<br><br>
+
+It will print:<br>
+Tom<br><br>
+
+friends[2] points to Harry<br><br>
+
+What about friends[3]?  It will give an "out of range" error. We don't have that many names in the array.<br><br>
+
+What if we want to print all the elements in an array? For a small array, you could do<br>
+print(friends[0])<br>
+print(friends[1])<br>
+etc.,<br><br>
+
+but this will get repetitive very quickly, and entirely impractical for large arrays.  So...loops to the rescue!<br><br>
+
+<u>LOOPS:</u><br><br>
+A loop is a bit of code that will run repeatedly for a number of times that you set.<br><br>
+
+<a href="https://www.w3schools.com/python/python_for_loops.asp">FOR LOOP:</a><br><br>
+
+<img class="diagram" src="images/forloop.png" alt="for loop flow diagram" height="300px" width="150px"><br><br>
+We can use the RANGE function within a <strong>for</strong> loop to tell Python how many times we want to run the loop.<br><br>
+
+<strong>for</strong> index in range(0, 10, 1):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print(index)<br><br>
+
+Range has 3 arguments: <strong>start, stop, step</strong>, in that order.<br><br>
+
+"Step" is how you want it to increment; you can jump by 2 or 3 with each loop if you want. The default step value is 1, so if you want to go up by 1, you can leave it off if you want.<br><br>
+
+The "stop" value will make the loop run one less than the stop number. Because when the index gets to the stop number, it will evaluate that it's hit that number and STOP, not executing the code of the loop. So make your stop one past the last value you want.<br><br>
+
+What is the "index" variable in the for loop above? It's just a variable that tracks where we are within the loop (Azam: "it holds the value that is being incremented").<br><br>
+
+What changes in the <strong>for</strong> loop each time it's run? The index. So the key to making this for loop run is to make whatever action you wantto happen, happen to the index (or whatever name you've given the index variable).<br><br><br>
+
+<a href="https://www.w3schools.com/python/ref_func_len.asp">ARRAY LENGTH:</a><br><br>
+<strong>len()</strong> is a built-in function that will give you a number that tells you how many elements are in your array.<br><br>
+
+with the array: friends = ["Tom", "Dick", "Harry"] - running len(friends) will return 3<br><br>
+
+You can use this len() function within the range function to not have to count all the items in your array to be able to iterate through it.<br><br>
+
+You can also do a "for-each" loop (C# terminology), which replaces the range function with the name of the array.<br><br>
+
+<strong>for</strong> friend in friends:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print(friend)<br><br>
+
+But you will need the range version of the loop if you want to go backwards through the loop, access the actual index (the number indicating where the element is within the array), or other things.<br><br>
+
+Arrays and lists are ideally named with plurals: "numbers", "friends", "addresses", etc. because they represent a collection of elements.<br><br><br>
+
+<u>REVERSE ARRAY:</u><br><br>
+To go backward - start your range at the end of your list (referred to as len(list)-1), go to -1, and go by minus 1 each time.<br><br>
+
+Why is the STOP value -1? Because the range function always stops one before the stop number.<br><br>
+
+STEP value is -1 so we count down from the full length of the list.<br><br>
+
+Why len()-1 instead of just len()? <br><br>
+
+Because the array is zero-indexed. Having the full length of the list makes it look for one index past where the array actually ends.<br><br><br>
+
+
+<a href="https://www.freecodecamp.org/news/python-list-append-how-to-add-an-element-to-an-array-explained-with-examples/">APPENDING TO AN ARRAY:</a></u><br><br>
+The append() function in Python lets us add items to our array.<br><br>
+friends.append("Denise") will make the friends array above become:<br> 
+friends = ["Tom", "Dick", "Harry", "Denise"]<br><br><br>
+
+<u>INSERT AT SPECIFIC LOCATION:</u><br>
+Indicate a specific index where you want to add your new item.<br><br>
+friends.insert(1, "Summer")<br>
+friends = ["Tom", "Summer", "Dick", "Harry", "Denise"]<br><br><br>
+
+<u>REMOVE ITEM:</u><br>
+friends.remove("Tom")<br><br><br>
+
+<u>REMOVE BY INDEX:</u><br>
+del friends[2]<br><br><br>
+
+<u>WHILE LOOPS:</u><br><br>
+
+- will run until the condition is broken or false<br><br>
+
+<strong>while</strong> True:<br>
+<strong>while</strong> 1==1:<br>
+- each of these will each run forever unless something is changed<br><br>
+
+counter = 0<br>
+<strong>while</strong> counter &lt 10:<br>
+- this will also run forever unless you include an incrementing counter as part of the loop<br><br><br>
+
+Lists are everywhere on websites!<br><br>
+
+Several recent assignments we've had often show up as interview questions - fizzbuzz, palindrome, and primes in particular.<br><br><br>
+
+(END OF WEEK 1, DAY 3 NOTES)<br><br>
+
+<a href="index.html">Back to Main</a>
+
+</p>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+  <head>
+		<title>Week 1, Day 4 - Notes</title>
+		<link rel="stylesheet" href="notesStyles.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+    <body>
+      <img class="banner" src="images/under_construction.gif" alt="under construction banner">
+        <h1>DigitalCrafts Full-Stack Immersive Feb. 2021 Cohort</h1>
+	<h2>Week 1 Day 4 Notes</h2>
+	<p><em><a href="index.html">(Back to Main)</a></em></p><br>
+        <p><strong>DAY 3 ASSIGNMENT REVIEW:</strong><br><br>
+
+<a href="https://www.geeksforgeeks.org/python-program-check-string-palindrome-not/">Palindromes:</a><br><br>
+- we're taking input from the user and figuring out if it's a palindrome<br><br>
+- set a variable to equal your input, maybe call it "word"<br><br>
+- run a <strong>for</strong> loop to reverse through the word<br><br>
+for index in range(len(word)-1, -1, -1):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;do something<br><br>
+- create a variable for the reverse of the word outside of the function, say "reversed_word"<br><br>
+- then make the results of the reverse loop add to the "reversed_word" variable<br><br>
+for index in range(len(word)-1, -1, -1):<br>
+	reversed word += word[index]<br><br>
+- then compare original word and reversed word using an if statement<br><br>
+for index in range(len(word)-1, -1, -1):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;reversed word += word[index]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if word == reversed_word:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("PALINDROME")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Not a palindrome")<br><br>
+- want to make this reusable? create a function. this removes the user input bit, because now you're passing the word variable to it when you first call it. You can also simplify the if/else bit into a simple return statment returning True if it's a palindrome and false otherwise. Then *outside* the function you have more flexibility to do things with that result.<br><br>
+
+- As much as you can, make your functions do only one job per function.<br><br><br>
+
+<a href="https://www.programiz.com/python-programming/examples/factorial">Factorials:</a><br><br>
+- again, start with taking the input from the user<br><br>
+- then write a for loop again<br><br>
+for index in range(1, number +1):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;do something<br><br>
+- create a variable outside the function to receive the result <br><br>
+result = 1<br>
+for index in range(1, number +1):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;result *= index<br>
+print(result)<br><br><br>
+
+
+<u>Overall Tips:</u><br><br>
+- don't try to attack the entire problem at once; <a href="https://www.bbc.co.uk/bitesize/topics/zkcqn39/articles/z8ngr82">start with small chunks</a><br><br>
+- game designers starting a game may start with a red blob for the protagonist, a brown one for the enemy, etc. The graphics can come in after the gameplay motion has been fleshed out.<br><br>
+<!--<img class="plumber" src="images/plumber.jpg" alt="A figurine of a plumber about to throw a fireball"><br><br>-->
+
+<picture>
+  <source srcset="images/kart.jpg" media="(max-width: 600px)">
+  <source srcset="images/plumber.jpg" media="(max-width: 1500px)">
+  <source srcset="flowers.jpg">
+  <img class="plumber" src="images/plumber.jpg" alt="Plumber throwing fireball">
+</picture><br><br>
+
+<!-- <picture>
+  <source media="(min-width: 900px)" srcset="plumber.jpg">
+  <source media="(min-width: 480px)" srcset="kart.jpg">
+  <img class="plumber" src="images/plumber.jpg" alt="Plumber throwing fireball">
+</picture> -->
+- once we hit databases and other, more complicated things, you will be overwhelmed if you try to tackle the entire thing at once.<br><br>
+- achieving small tasks will give you the confidence to move forward<br><br><br>
+
+
+<a href="https://www.w3schools.com/python/python_dictionaries.asp">DICTIONARIES:</a><br><br>
+
+- Dictionaries always contain *key-value pairs*<br><br>
+- Values can be ints/bools/floats in addition to strings. You *can* do that with keys as well, but it's confusing, so keys are usually strings to let them be more descriptive.<br><br>
+- If you want to store an airport name and its code, but together in one variable - use a dictionary<br><br>
+- Dictionary keys and values are usually both strings. They are wrapped together in curly braces like:<br><br>
+{"LAX": "Los Angeles International Airport"}<br><br>
+
+- Dictionaries are *everywhere* online. How would you represent a single tweet, for example, as a dictionary?<br><br>
+ <table>
+  <tr>
+    <th>Key</th>
+    <th>Value</th>
+  </tr>
+  <tr>
+    <td>"Text:"</td>
+    <td>"(contents of tweet)"</td>
+  </tr>
+  <tr>
+    <td>"Name:"</td>
+    <td>"(person's first and last name)"</td>
+  </tr>
+  <tr>
+    <td>"Handle:"</td>
+    <td>"@whomever"</td>
+  </tr>
+  <tr>
+    <td>"Date/Time:"</td>
+    <td>"(actual date and time)"</td>
+  </tr>
+</table> 
+
+<br><br>
+
+- You can create an empty dictionary (dict = {}) and add to it later<br><br>
+- You can access the contents of the dictionary with <a href="https://realpython.com/python-dicts/#accessing-dictionary-values">bracket notation</a>.<br><br>
+car = {"make": "Ford", "model": "Mustang}<br><br>
+
+print(car["model']) - will print "Mustang"<br><br>
+
+If you try to print a key that doesn't exist, you'll get an error. You can add key-value pairs pretty easily:<br><br>
+car["isElectric"] = False<br><br>
+
+If you try to make a key but don't give it a value, you'll get an error.<br><br>
+
+Look at any item on <a href="https://www.amazon.com/">Amazon</a>, and you'll see a lot of potential key-value pairs that could comprise a dictionary together.
+<br><br>
+ <table>
+  <tr>
+    <th>Key</th>
+    <th>Value</th>
+  </tr>
+  <tr>
+    <td>"Title:"</td>
+    <td>"Widget"</td>
+  </tr>
+  <tr>
+    <td>"Price:"</td>
+    <td>"$19.99"</td>
+  </tr>
+  <tr>
+    <td>"Description:"</td>
+    <td>"This is the greatest!"</td>
+  </tr>
+  <tr>
+    <td>"Brand:"</td>
+    <td>"ACME"</td>
+  </tr>
+</table> 
+
+<br><br>
+<u>ACTIVITY 1 - CREATE A DICTIONARY:</u><br><br>
+- take both inputs for first and last name<br><br>
+- create dictionary using inputs<br><br>
+- print using string concatenation to include the "my name is" and punctuation<br><br>
+print("My name is " + user["first_name"] + " " + user["last_name"])<br><br>
+
+- string interpolation version: <br><br>
+(Must use single-quote version to do this, because you've used double-quotes outside of the overall phrase)<br><br>
+print(f"My name is {user['last_name']}, {user['first_name']}")<br><br><br>
+
+**********<br><br><br>
+
+<a href="https://www.programiz.com/python-programming/nested-dictionary">NESTED DICTIONARIES:</a><br><br>
+
+- How do we store address book information for a person who has multiple addresses (e.g. college students)? You can store a list inside of a dictionary. You can also have arrays containing dictionaries inside of the overall dictionary! The combinations are infinite.<br><br>
+
+- Be on the lookout for brackets inside your dictionary - these indicate the presence of an array.<br><br>
+
+- Let's go back to that theoretical Amazon product. How might we include reviews in our dictionary? We could go with an array of dictionaries.<br><br>
+
+product = {"title" = "Awesome Widget", "brand" = "ACME", "reviews" = reviews}<br>
+reviews = [{"title" = "wonderful", "rating" = 5}, {"title" = "terrible", "rating": 1}]<br><br><br>
+
+<u>ACTIVITIES 2 and 3 - NESTED/MULTI-NESTED DICTIONARIES:</u><br><br>
+
+- dictionaries can be on multiple lines so you can easily see everything<br><br>
+- address is itself a dictionary, and the geo key within it points to yet another dictionary.<br><br>
+- all properties except the ID value are strings, wrapped in quotes, even if they are numbers (we don't want to do math with someone's zip code)<br><br>
+
+- install JSONView browser extension (others are out there for other browsers, though Azam recommends Chrome for development)<br><br><br>
+
+
+<a href="https://realpython.com/iterate-through-dictionary-python/">ITERATING THROUGH THE DICTIONARY:</a><br><br>
+<strong>Option #1</strong> - Use a for loop and iterate by key.<br><br>
+
+for key in dict:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print(key)<br><br>
+
+This will just print out the keys, not the values. How do you iterate by key and get the values? That's what we're more interested in.<br><br>
+
+for key in dict:<br>
+	print(bank_user[key])<br><br>
+
+This will print the values.<br><br>
+
+<strong>Option #2</strong> - Iterate by value instead.<br><br>
+
+for value in bank.user.values():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print(values)<br><br>
+
+- This will print just the values.<br><br>
+
+<strong>Option #3</strong> - Run a loop with the key, value tuple<br><br>
+
+for key, value in bank.user.items():<br>
+	print(key)<br>
+	print(value)<br><br><br>
+
+
+<a href="https://www.geeksforgeeks.org/python-ways-to-remove-a-key-from-dictionary/">DELETING FROM A DICTIONARY:</a><br><br>
+
+del dict[key]<br><br>
+
+From the Amazon product dictionary above:<br>
+del product["title"]<br><br><br>
+
+
+<u>ASSIGNMENT FOR TODAY - TIPS FROM AZAM:</u><br><br>
+- use while loop to keep program going until user enters q to quit <br><br>
+- find a nicer way to display tasks than just printing the dictionary as a whole<br><br><br>
+
+
+(END OF WEEK 1, DAY 3 NOTES)<br><br>
+
+<a href="index.html">Back to Main</a>
+
+</p>

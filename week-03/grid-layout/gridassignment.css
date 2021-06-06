@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    background-color: blanchedalmond;
+}
+h1 {
+    text-align: center;
+}
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 10% 1fr 1fr 10%;
+    grid-template-areas: 
+        "header header"
+        "box1 box2"
+        "box3 box4"
+        "footer footer";
+    color: white
+}
+.top {
+    background-color: #99582a;
+    grid-area: header;
+}
+.box1 {
+    background-color: #bb9457;
+    grid-area: box1;
+}
+
+.box2 {
+    background-color: #6f1d1b;
+    grid-area: box2;
+}
+.box3 {
+    background-color: #6f1d1b;
+    grid-area: box3;
+}
+.box4 {
+    background-color: #bb9457;
+    grid-area: box4;
+}
+.bottom {
+    background-color: #432818;
+    grid-area: footer;
+}
+.container > div {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+/*You shouldn't see the background color if everything is covering how you want, unless you've added gaps between the columns/rows*/
+.container {
+    background-color: blue;
+    width: 100%;
+    min-height: 50vh;
+}

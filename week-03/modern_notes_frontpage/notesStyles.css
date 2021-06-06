@@ -1,0 +1,48 @@
+
+* {
+    cursor: url(https://cur.cursors-4u.net/cursors/cur-1/cur1.ani), url(https://cur.cursors-4u.net/cursors/cur-1/cur1.png), auto !important;
+}
+
+body {
+background-image: url("wallpaper.jpg");
+background-color: black;
+color: white;
+padding: 20px;
+}
+
+.banner {
+    width: 100% ;
+    height: auto;
+ }
+
+.in-text-image {
+    max-width: 100%;
+    height: auto;
+} 
+.diagram {
+    max-width: 100%;
+    height: auto;
+}
+.plumber { 
+    max-width: 50%;
+    height: auto;
+}
+.notes {
+    max-width: 100%;
+    height: auto;
+}
+a:link {
+    color: red;
+}
+a:visited {
+    color: yellow;
+}
+a:hover {
+    color: orange;
+} 
+li {
+    font-size: 1.1rem;
+}
+th {
+    text-align: left;
+}

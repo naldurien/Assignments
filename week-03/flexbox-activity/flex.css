@@ -1,0 +1,74 @@
+.parent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 500px;
+  width: 800px;
+  border: 5px black;
+  position: relative;
+  background-color: white;
+}
+
+.child-1 {
+  background-color: #34aeeb;
+  height: 200px;
+  width: 800px;
+  position: absolute;
+}
+
+.child-2 {
+  background-color: #f571ac;
+  height: 5px;
+  width: 200px;
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  padding: 100px 0;
+  margin: 255px 0px 0px 0px;
+}
+
+.child-3 {
+  background-color: #f571ac;
+  height: 5px;
+  width: 200px;
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  padding: 100px 0;
+  margin: 255px 0px 0px 305px;
+}
+
+.child-4 {
+  background-color: #f571ac;
+  height: 5px;
+  width: 200px;
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  padding: 100px 0;
+  margin: 255px 0px 0px 600px;
+}
+
+.child-5 {
+  background-color: #fcae38;
+  height: 60px;
+  width: 170px;
+  position: absolute;
+  margin: 270px 0px 0px 15px;
+}
+
+.child-6 {
+  background-color: #fcae38;
+  height: 60px;
+  width: 170px;
+  position: absolute;
+  margin: 270px 0px 0px 320px;
+}
+
+.child-7 {
+  background-color: #fcae38;
+  height: 60px;
+  width: 170px;
+  position: absolute;
+  margin: 270px 0px 0px 618px;
+}

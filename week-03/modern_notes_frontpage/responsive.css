@@ -1,0 +1,83 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: black;
+}
+
+a {
+  color: white;
+  border-radius: .25rem;
+  display: inline-block;
+  transition: all .3s;
+}
+
+a:hover {
+  opacity: .6;
+}
+
+.top {
+  /* Photo by Марьян Блан on Unsplash */
+  background: url('paper.jpg') center;
+  background-size: cover;
+  padding: 4rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  align-items: center;
+}
+
+.top > * {
+  color: black;
+}
+
+.top > h1 {
+  font-size: 4rem;
+  padding-bottom: 1rem;
+}
+
+.top > article > p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+
+.notes {
+  padding: 2rem;
+}
+
+.notes > ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 1rem;
+}
+
+.notes > ul > li {
+  border: 1px solid #E2E2E2;
+  border-radius: .5rem;
+}
+
+.notes > ul > li > figure {
+  max-height: 220px;
+  overflow: hidden;
+  border-top-left-radius: .5rem;
+  border-top-right-radius: .5rem;
+  position: relative;
+}
+
+.notes > ul > li > p {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  padding: 1rem .75rem;
+  color: #7d7c7c;
+  text-align: center;
+}
+
+.notes > ul > li > a {
+  padding: 1rem 0 0 0;
+  margin: .5rem;
+}
+
